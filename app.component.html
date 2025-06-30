@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="weather-card">
+    <h3>
+      تطبيق الطقس
+    </h3>
+    <input [(ngModel)]="city" type="text" id="city-input" placeholder="إدخل اسم المدينة">
+    <button  id="city-input-btn" (click)="getWeather()">
+      الحصول على الطقس
+    </button>
+    <div #contentDiv id="weather-info" class="animate__animated animate__fadeIn">
+      <h3 id="city-name">{{ data.name }}</h3>
+      <p id="date"></p>
+      <p dir="ltr" id="temperature">{{ data.main.temp }} °C</p>
+      <p id="description">{{ data.weather[0].description }}</p>
+      <p > سرعة الرياح: {{ data.wind.speed }} كم/س</p>
+      <p > الرطوبة: {{ data.main.humidity }}%</p>
+
+    </div>
+  </div>
+</div>
